@@ -1,0 +1,6 @@
+query Search($limit: Int, $image: String) {
+  search(limit: $limit, image: $image) {
+    image
+    text
+  }
+}
