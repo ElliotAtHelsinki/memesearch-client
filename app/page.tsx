@@ -39,7 +39,7 @@ const Home: React.FC = () => {
                 label='Upload image to search for the most similar memes'
                 name='image'
                 type='file'
-                accept='image/png, image/gif, image/jpeg'
+                accept='image/*'
                 p={2}
                 h='3rem'
                 onChange={(e) => {
