@@ -10,7 +10,7 @@ import { useState } from 'react'
 
 const Home: React.FC = () => {
   const [imageFile, setImageFile] = useState<File | null>(null)
-  const { refetch } = useQuery(SearchDocument, { skip: true })
+  const { refetch, loading } = useQuery(SearchDocument, { skip: true })
   const [results, setResults] = useState<{ __typename?: string, image: string, text: string }[]>([])
 
   return (
@@ -56,7 +56,7 @@ const Home: React.FC = () => {
                 </Flex>
               }
               <Flex mt={4} w='100%' justifyContent='center'>
-                <Button type='submit' isLoading={isSubmitting} hidden={!imageFile ? true : false}>Search</Button>
+                <Button type='submit' isLoading={isSubmitting || loading} hidden={!imageFile ? true : false}>Search</Button>
               </Flex>
             </Form>
           )}
